@@ -39,5 +39,3 @@ The following scripts are available in the project:
 
 - `notes:convert:txt`: Converts Google Keep notes to TXT format.
 - `notes:merge:json`: Converts Google Keep notes to JSON format.
-
-The `Data` directory contains the input and output files. The `dist` directory contains the compiled TypeScript files. The `node_modules` directory contains the project dependencies. The `src` directory contains the TypeScript files.
