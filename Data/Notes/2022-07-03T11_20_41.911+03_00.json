@@ -1,0 +1,18 @@
+{
+  "color": "YELLOW",
+  "isTrashed": false,
+  "isPinned": true,
+  "isArchived": false,
+  "annotations": [
+    {
+      "description": "Lyrics to a new song",
+      "source": "Songwriting ideas",
+      "title": "Verse 1",
+      "url": ""
+    }
+  ],
+  "textContent": "I can't get you out of my head",
+  "title": "New Song Idea",
+  "userEditedTimestampUsec": 1623324101530000,
+  "createdTimestampUsec": 1623324101530000
+}

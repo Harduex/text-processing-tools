@@ -1,0 +1,18 @@
+{
+  "color": "DEFAULT",
+  "isTrashed": false,
+  "isPinned": false,
+  "isArchived": true,
+  "annotations": [
+    {
+      "description": "Notes from a job interview",
+      "source": "Career development",
+      "title": "Interview Questions",
+      "url": ""
+    }
+  ],
+  "textContent": "Tell me about a time when you had to deal with a difficult customer...",
+  "title": "Job Interview",
+  "userEditedTimestampUsec": 1683324101530000,
+  "createdTimestampUsec": 1683324101530000
+}

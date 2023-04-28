@@ -1,0 +1,18 @@
+{
+  "color": "GREEN",
+  "isTrashed": true,
+  "isPinned": false,
+  "isArchived": true,
+  "annotations": [
+    {
+      "description": "Notes from a business meeting",
+      "source": "Sales Team",
+      "title": "Action Items",
+      "url": ""
+    }
+  ],
+  "textContent": "Follow up with client A regarding new proposal",
+  "title": "Sales Meeting",
+  "userEditedTimestampUsec": 1613324101530000,
+  "createdTimestampUsec": 1613324101530000
+}

@@ -1,0 +1,24 @@
+{
+  "name": "text-processing-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "notes:convert:txt": "node dist/scripts/convertNotesToTxt.js",
+    "notes:merge:json": "node dist/scripts/mergeNotesToJson.js",
+    "tsc:build": "rm -rf ./dist && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.4",
+    "dotenv": "^16.0.3",
+    "yargs": "^17.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.2",
+    "typescript": "^5.0.4"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "color": "GREEN",
+  "isTrashed": true,
+  "isPinned": false,
+  "isArchived": true,
+  "annotations": [
+    {
+      "description": "Notes from a workout session",
+      "source": "Fitness journal",
+      "title": "Exercises",
+      "url": ""
+    }
+  ],
+  "textContent": "10 push-ups, 20 sit-ups, 30 squats...",
+  "title": "Workout Log",
+  "userEditedTimestampUsec": 1693324101530000,
+  "createdTimestampUsec": 1693324101530000
+}

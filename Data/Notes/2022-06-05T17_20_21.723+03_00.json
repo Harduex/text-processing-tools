@@ -1,0 +1,18 @@
+{
+  "color": "BLUE",
+  "isTrashed": false,
+  "isPinned": true,
+  "isArchived": false,
+  "annotations": [
+    {
+      "description": "This is an important note",
+      "source": "My personal journal",
+      "title": "Important reminder",
+      "url": ""
+    }
+  ],
+  "textContent": "Remember to buy milk and eggs",
+  "title": "Grocery List",
+  "userEditedTimestampUsec": 1654324101530000,
+  "createdTimestampUsec": 1654324101530000
+}

@@ -1,0 +1,18 @@
+{
+  "color": "RED",
+  "isTrashed": false,
+  "isPinned": false,
+  "isArchived": false,
+  "annotations": [
+    {
+      "description": "Ideas for a new blog post",
+      "source": "My personal blog",
+      "title": "Topic",
+      "url": ""
+    }
+  ],
+  "textContent": "Why I decided to quit my job and travel the world",
+  "title": "New Blog Post",
+  "userEditedTimestampUsec": 1633324101530000,
+  "createdTimestampUsec": 1633324101530000
+}

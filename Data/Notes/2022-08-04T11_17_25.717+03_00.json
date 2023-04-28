@@ -1,0 +1,18 @@
+{
+  "color": "ORANGE",
+  "isTrashed": false,
+  "isPinned": true,
+  "isArchived": false,
+  "annotations": [
+    {
+      "description": "Recipe for lasagna",
+      "source": "Mom's cookbook",
+      "title": "Ingredients",
+      "url": ""
+    }
+  ],
+  "textContent": "1 pound ground beef, 1 onion, 1 jar spaghetti sauce...",
+  "title": "Lasagna Recipe",
+  "userEditedTimestampUsec": 1603324101530000,
+  "createdTimestampUsec": 1603324101530000
+}
