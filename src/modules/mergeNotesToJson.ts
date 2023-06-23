@@ -1,9 +1,10 @@
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
-import { progressBar } from "../helpers/utilities";
-
 dotenv.config();
+
+import { cleanText, progressBar } from "../helpers/utilities";
+
 
 interface MergedNotes {
   data: string[];
@@ -26,9 +27,10 @@ export const mergeNotesToJson = (
     const contents = fs.readFileSync(filePath, "utf8");
     const data = JSON.parse(contents);
 
-    mergedNotes.data.push(
-      `${data.title ? data.title + ", " : ""}${data.textContent}`
-    );
+    const noteTextFormatted = cleanText(`${data.title ? data.title + ", " : ""}${
+      data.textContent
+    }`);
+    mergedNotes.data.push(noteTextFormatted);
 
     progressBar(++completedCount, files.length);
 

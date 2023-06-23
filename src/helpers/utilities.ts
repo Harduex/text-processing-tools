@@ -1,3 +1,5 @@
+import fs from "fs";
+
 export const progressBar = (
   completedCount: number,
   totalCount: number,
@@ -14,4 +16,17 @@ export const progressBar = (
   process.stdout.write(
     `Progress: [${progressBar}] ${percentage}%`.padEnd(lastBarLength + 15)
   );
+};
+
+export const getDocuments = (path: string): string[] => {
+  const rawDocuments = fs.readFileSync(path, "utf8");
+  const documents: string[] = JSON.parse(rawDocuments).data;
+  return documents;
+};
+
+export const cleanText = (text: string) => {
+  return text
+    .replace(/[\n\t\r]/g, " ")
+    .replace(/\s\s+/g, " ")
+    .trim();
 };

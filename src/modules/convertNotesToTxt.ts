@@ -1,9 +1,10 @@
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
+dotenv.config();
+
 import { progressBar } from "../helpers/utilities";
 
-dotenv.config();
 
 export const convertNotesToTxt = (
   notesDir: string,

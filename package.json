@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npm run tsc:build",
     "start": "node dist/index.js",
+    "start:topic:detector:api": "cd TopicsDetectorAPI && python api.py",
     "notes:convert:txt": "node dist/scripts/convertNotesToTxt.js",
+    "notes:extract:topics": "node dist/scripts/extractTopics.js",
     "notes:merge:json": "node dist/scripts/mergeNotesToJson.js",
     "tsc:build": "rm -rf ./dist && tsc"
   },
@@ -14,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "async": "^3.2.4",
+    "compromise": "^14.8.2",
     "dotenv": "^16.0.3",
     "yargs": "^17.6.0"
   },
