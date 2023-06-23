@@ -27,6 +27,8 @@ The following scripts are available in the project:
 
 - `notes:convert:txt`: Converts Google Keep notes to TXT format.
 - `notes:merge:json`: Converts Google Keep notes to JSON format.
+- `start:topic:detector:api`: Starts the topic detector API.
+- `notes:extract:topics`: Extracts topics from merged JSON notes.
 
 ### Environment Variables
 The following environment variables are available in the project:
