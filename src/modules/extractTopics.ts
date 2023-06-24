@@ -18,7 +18,7 @@ export const extractTopics = async (
   let documentsWithTopics: Object[] = [];
   for (const doc of documents) {
     const topic: Topic | undefined = await findTopics(doc);
-    documentsWithTopics.push({ text: doc, topics: topic?.prediction });
+    documentsWithTopics.push({ text: doc, extracted: topic?.prediction });
 
     const outputFilePath = path.join(jsonNotesDir, `notesWithTopics.json`);
     fs.writeFile(

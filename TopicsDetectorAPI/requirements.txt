@@ -3,3 +3,8 @@ transformers
 torch
 sacremoses
 nltk
+langdetect
+gensim
+re
+spacy
+pyLDAvis

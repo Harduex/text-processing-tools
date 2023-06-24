@@ -1,0 +1,135 @@
+[
+  {
+    "text": "Grocery List, Remember to buy milk and eggs",
+    "extracted": {
+      "text_language": "en",
+      "topic_keywords": [
+        "buy",
+        "egg",
+        "grocery",
+        "list",
+        "milk",
+        "remember"
+      ],
+      "translated_language": "en",
+      "translated_text": "Grocery List, Remember to buy milk and eggs"
+    }
+  },
+  {
+    "text": "Идея за нова песен, не мога да те избия от главата си",
+    "extracted": {
+      "text_language": "bg",
+      "topic_keywords": [
+        "get",
+        "head",
+        "new",
+        "song"
+      ],
+      "translated_language": "en",
+      "translated_text": "I can't get you out of my head for a new song."
+    }
+  },
+  {
+    "text": "Sales Meeting, Follow up with client A regarding new proposal",
+    "extracted": {
+      "text_language": "en",
+      "topic_keywords": [
+        "client",
+        "follow",
+        "meeting",
+        "new",
+        "proposal",
+        "regard",
+        "sale"
+      ],
+      "translated_language": "en",
+      "translated_text": "Sales Meeting, Follow up with client A regarding new proposal"
+    }
+  },
+  {
+    "text": "Рецепта за лазаня, 1 килограм телешка кайма, 1 глава лук, 1 буркан сос за спагети...",
+    "extracted": {
+      "text_language": "bg",
+      "topic_keywords": [
+        "beef",
+        "head",
+        "jar",
+        "kilo",
+        "meat",
+        "onion",
+        "recipe",
+        "sauce",
+        "spaghetti"
+      ],
+      "translated_language": "en",
+      "translated_text": "Lasagna recipe, 1 kilo of beef meat, 1 onion head, 1 jar of spaghetti sauce..."
+    }
+  },
+  {
+    "text": "New Blog Post, Why I decided to quit my job and travel the world",
+    "extracted": {
+      "text_language": "en",
+      "topic_keywords": [
+        "blog",
+        "decide",
+        "job",
+        "new",
+        "post",
+        "quit",
+        "travel",
+        "world"
+      ],
+      "translated_language": "en",
+      "translated_text": "New Blog Post, Why I decided to quit my job and travel the world"
+    }
+  },
+  {
+    "text": "идея за нова картина, пейзаж с планини и река, минаваща през тях",
+    "extracted": {
+      "text_language": "bg",
+      "topic_keywords": [
+        "idea",
+        "landscape",
+        "mountain",
+        "new",
+        "painting",
+        "pass",
+        "river"
+      ],
+      "translated_language": "en",
+      "translated_text": "an idea for a new painting, a landscape with mountains and a river passing through them"
+    }
+  },
+  {
+    "text": "Workout Log, 10 push-ups, 20 sit-ups, 30 squats...",
+    "extracted": {
+      "text_language": "en",
+      "topic_keywords": [
+        "up",
+        "push",
+        "sit",
+        "squat"
+      ],
+      "translated_language": "en",
+      "translated_text": "Workout Log, 10 push-ups, 20 sit-ups, 30 squats..."
+    }
+  },
+  {
+    "text": "подготовка за интервю за работа, разкажете ми за случай, в който сте имали работа с труден клиент..",
+    "extracted": {
+      "text_language": "bg",
+      "topic_keywords": [
+        "case",
+        "client",
+        "deal",
+        "difficult",
+        "interview",
+        "job",
+        "preparation",
+        "tell"
+      ],
+      "translated_language": "en",
+      "translated_text": "preparation for a job interview, tell me about a case where you were dealing with a difficult client.."
+    }
+  }
+]
