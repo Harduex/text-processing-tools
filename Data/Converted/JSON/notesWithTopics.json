@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "text": "Grocery List, Remember to buy milk and eggs",
     "extracted": {
       "topic_keywords": [
@@ -19,6 +20,7 @@
     }
   },
   {
+    "id": 1,
     "text": "Идея за нова песен, не мога да те избия от главата си",
     "extracted": {
       "topic_keywords": [
@@ -35,6 +37,7 @@
     }
   },
   {
+    "id": 2,
     "text": "Sales Meeting, Follow up with client A regarding new proposal",
     "extracted": {
       "topic_keywords": [
@@ -54,6 +57,7 @@
     }
   },
   {
+    "id": 3,
     "text": "Рецепта за лазаня, 1 килограм телешка кайма, 1 глава лук, 1 буркан сос за спагети...",
     "extracted": {
       "topic_keywords": [
@@ -75,6 +79,7 @@
     }
   },
   {
+    "id": 4,
     "text": "New Blog Post, Why I decided to quit my job and travel the world",
     "extracted": {
       "topic_keywords": [
@@ -95,6 +100,7 @@
     }
   },
   {
+    "id": 5,
     "text": "идея за нова картина, пейзаж с планини и река, минаваща през тях",
     "extracted": {
       "topic_keywords": [
@@ -114,6 +120,7 @@
     }
   },
   {
+    "id": 6,
     "text": "Workout Log, 10 push-ups, 20 sit-ups, 30 squats...",
     "extracted": {
       "topic_keywords": [
@@ -131,6 +138,7 @@
     }
   },
   {
+    "id": 7,
     "text": "подготовка за интервю за работа, разкажете ми за случай, в който сте имали работа с труден клиент..",
     "extracted": {
       "topic_keywords": [

@@ -15,11 +15,13 @@ export const extractTopics = async (jsonNotesDir: string) => {
   const documents = getDocuments(documentsPath);
 
   let documentsWithTopics: Object[] = [];
-  for (const doc of documents) {
+  for (const [index, doc] of documents.entries()) {
+    const text = doc?.translation?.translated_text || doc.text;
     const topic: Topic | undefined = await findTopics(
-      doc.translation.translated_text
+      text
     );
     documentsWithTopics.push({
+      id: index,
       text: doc.text,
       extracted: topic?.prediction,
       translation: doc.translation,

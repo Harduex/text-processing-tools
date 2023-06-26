@@ -10,15 +10,16 @@ interface Translation {
 }
 
 export const translateNotes = async (
-  jsonNotesDir: string
+  jsonNotesDir: string,
+  sourceLanguage: string,
+  targetLanguage: string,
 ): Promise<Object[]> => {
   const outputFilename: string = process.env.OUTPUT_FILENAME || "notes";
   const documentsPath = `${jsonNotesDir}/${outputFilename}.json`;
   const documents = getDocuments(documentsPath).data;
   let translatedDocuments: Object[] = [];
   for (const doc of documents) {
-    const translation: Translation | undefined = await translateNote(doc);
-    console.log(translation);
+    const translation: Translation | undefined = await translateNote(doc, sourceLanguage, targetLanguage);
 
     translatedDocuments.push({
       text: doc,
@@ -45,7 +46,9 @@ export const translateNotes = async (
 };
 
 const translateNote = async (
-  text: string
+  text: string,
+  sourceLanguage: string,
+  targetLanguage: string,
 ): Promise<Translation | undefined> => {
   const textTranslatorApiUrl =
     `${process.env.TOPIC_DETECTOR_API}/translate` || "";
@@ -53,9 +56,6 @@ const translateNote = async (
     .replace(/(\r\n|\n|\r)/gm, " ")
     .replace(/\\/g, "\\\\")
     .replace(/"/g, '\\"');
-
-  const sourceLanguage = "bg";
-  const targetLanguage = "en";
 
   const options = {
     method: "POST",
