@@ -18,9 +18,9 @@ export const progressBar = (
   );
 };
 
-export const getDocuments = (path: string): string[] => {
+export const getDocuments = (path: string): any => {
   const rawDocuments = fs.readFileSync(path, "utf8");
-  const documents: string[] = JSON.parse(rawDocuments).data;
+  const documents: any = JSON.parse(rawDocuments);
   return documents;
 };
 

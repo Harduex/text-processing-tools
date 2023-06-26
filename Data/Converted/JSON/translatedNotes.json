@@ -1,16 +1,6 @@
 [
   {
     "text": "Grocery List, Remember to buy milk and eggs",
-    "extracted": {
-      "topic_keywords": [
-        "buy",
-        "egg",
-        "grocery",
-        "list",
-        "milk",
-        "remember"
-      ]
-    },
     "translation": {
       "detected_language": "en",
       "source_language": "bg",
@@ -20,13 +10,6 @@
   },
   {
     "text": "Идея за нова песен, не мога да те избия от главата си",
-    "extracted": {
-      "topic_keywords": [
-        "get",
-        "head",
-        "song"
-      ]
-    },
     "translation": {
       "detected_language": "bg",
       "source_language": "bg",
@@ -36,16 +19,6 @@
   },
   {
     "text": "Sales Meeting, Follow up with client A regarding new proposal",
-    "extracted": {
-      "topic_keywords": [
-        "client",
-        "follow",
-        "meeting",
-        "proposal",
-        "regard",
-        "sale"
-      ]
-    },
     "translation": {
       "detected_language": "en",
       "source_language": "bg",
@@ -55,18 +28,6 @@
   },
   {
     "text": "Рецепта за лазаня, 1 килограм телешка кайма, 1 глава лук, 1 буркан сос за спагети...",
-    "extracted": {
-      "topic_keywords": [
-        "beef",
-        "head",
-        "jar",
-        "meat",
-        "onion",
-        "recipe",
-        "sauce",
-        "spaghetti"
-      ]
-    },
     "translation": {
       "detected_language": "bg",
       "source_language": "bg",
@@ -76,17 +37,6 @@
   },
   {
     "text": "New Blog Post, Why I decided to quit my job and travel the world",
-    "extracted": {
-      "topic_keywords": [
-        "blog",
-        "decide",
-        "job",
-        "post",
-        "quit",
-        "travel",
-        "world"
-      ]
-    },
     "translation": {
       "detected_language": "en",
       "source_language": "bg",
@@ -96,16 +46,6 @@
   },
   {
     "text": "идея за нова картина, пейзаж с планини и река, минаваща през тях",
-    "extracted": {
-      "topic_keywords": [
-        "idea",
-        "landscape",
-        "mountain",
-        "painting",
-        "pass",
-        "river"
-      ]
-    },
     "translation": {
       "detected_language": "bg",
       "source_language": "bg",
@@ -115,14 +55,6 @@
   },
   {
     "text": "Workout Log, 10 push-ups, 20 sit-ups, 30 squats...",
-    "extracted": {
-      "topic_keywords": [
-        "up",
-        "push",
-        "sit",
-        "squat"
-      ]
-    },
     "translation": {
       "detected_language": "en",
       "source_language": "bg",
@@ -132,17 +64,6 @@
   },
   {
     "text": "подготовка за интервю за работа, разкажете ми за случай, в който сте имали работа с труден клиент..",
-    "extracted": {
-      "topic_keywords": [
-        "case",
-        "client",
-        "deal",
-        "interview",
-        "job",
-        "preparation",
-        "tell"
-      ]
-    },
     "translation": {
       "detected_language": "bg",
       "source_language": "bg",

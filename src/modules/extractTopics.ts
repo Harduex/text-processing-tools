@@ -9,16 +9,21 @@ interface Topic {
   prediction: string;
 }
 
-export const extractTopics = async (
-  jsonNotesDir: string
-): Promise<Object[]> => {
-  const outputFilename: string = process.env.OUTPUT_FILENAME || "notes";
+export const extractTopics = async (jsonNotesDir: string) => {
+  const outputFilename: string = "translatedNotes";
   const documentsPath = `${jsonNotesDir}/${outputFilename}.json`;
   const documents = getDocuments(documentsPath);
+
   let documentsWithTopics: Object[] = [];
   for (const doc of documents) {
-    const topic: Topic | undefined = await findTopics(doc);
-    documentsWithTopics.push({ text: doc, extracted: topic?.prediction });
+    const topic: Topic | undefined = await findTopics(
+      doc.translation.translated_text
+    );
+    documentsWithTopics.push({
+      text: doc.text,
+      extracted: topic?.prediction,
+      translation: doc.translation,
+    });
 
     const outputFilePath = path.join(jsonNotesDir, `notesWithTopics.json`);
     fs.writeFile(
@@ -40,10 +45,14 @@ export const extractTopics = async (
 };
 
 const findTopics = async (text: string): Promise<Topic | undefined> => {
-  const topicDetectorApiUrl = process.env.TOPIC_DETECTOR_API || "";
+  const topicDetectorApiUrl = `${process.env.TOPIC_DETECTOR_API}/predict` || "";
 
-  const cleanedText = text.replace(/(\r\n|\n|\r)/gm, " ");
-  // const encodedText = encodeURIComponent(cleanedText);
+  // TODO: format the cleanedText to be in valid format for JSON.stringify({ text: cleanedText }), to work every time
+  // const cleanedText = text.replace(/(\r\n|\n|\r)/gm, " ");
+  const cleanedText = text
+    .replace(/(\r\n|\n|\r)/gm, " ")
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"');
 
   const options = {
     method: "POST",

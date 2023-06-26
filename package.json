@@ -10,6 +10,7 @@
     "notes:convert:txt": "node dist/scripts/convertNotesToTxt.js",
     "notes:extract:topics": "node dist/scripts/extractTopics.js",
     "notes:merge:json": "node dist/scripts/mergeNotesToJson.js",
+    "notes:translate:json": "node dist/scripts/translateNotes.js",
     "tsc:build": "rm -rf ./dist && tsc"
   },
   "keywords": [],

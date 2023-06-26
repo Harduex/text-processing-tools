@@ -1,28 +1,12 @@
-from nltk.corpus import stopwords
 import spacy
-from gensim.models import CoherenceModel
 from gensim.utils import simple_preprocess
 import gensim.corpora as corpora
 import gensim
 import re
-import numpy as np
-from langdetect import detect as detect_language
-from flask import Flask, request, jsonify
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline, AutoModelForSeq2SeqLM, MarianMTModel, AutoModelForTokenClassification
 
 import nltk
+from nltk.corpus import stopwords
 nltk.download('stopwords')
-
-
-def translate(text, source_language="bg", target_language="en"):
-    model_name = f"Helsinki-NLP/opus-mt-{source_language}-{target_language}"
-    model = MarianMTModel.from_pretrained(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    batch = tokenizer([text], return_tensors="pt")
-    generated_ids = model.generate(**batch)
-    translated_text = tokenizer.batch_decode(
-        generated_ids, skip_special_tokens=True)[0]
-    return translated_text
 
 
 def sent_to_words(sentences):
@@ -53,12 +37,13 @@ def lemmatization(texts, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV'], nlp=lam
     return texts_out
 
 
-def predict_topic_keywords(text, stopwords):
+def predict_topic_keywords(text):
     # load corpus
     data = [text]
     # prepare stopwords
     stop_words = stopwords.words('english')
-    stop_words.extend(['from', 'subject', 're', 'edu'])
+    additional_stop_words = ['do', 'm', 'un', 's', 'go', 're']
+    stop_words.extend(additional_stop_words)
     # Remove Emails
     data = [re.sub('\S*@\S*\s?', '', sent) for sent in data]
     # Remove new line characters
@@ -71,11 +56,11 @@ def predict_topic_keywords(text, stopwords):
     # Build the bigram and trigram models
     # higher threshold fewer phrases.
     bigram = gensim.models.Phrases(data_words, min_count=5, threshold=100)
-    trigram = gensim.models.Phrases(bigram[data_words], threshold=100)
+    # trigram = gensim.models.Phrases(bigram[data_words], threshold=100)
 
     # Faster way to get a sentence clubbed as a trigram/bigram
     bigram_mod = gensim.models.phrases.Phraser(bigram)
-    trigram_mod = gensim.models.phrases.Phraser(trigram)
+    # trigram_mod = gensim.models.phrases.Phraser(trigram)
 
     # Remove Stop Words
     data_words_nostops = remove_stopwords(data_words, stop_words)
@@ -88,8 +73,10 @@ def predict_topic_keywords(text, stopwords):
     nlp = spacy.load('en_core_web_sm', disable=['parser', 'ner'])
 
     # Do lemmatization keeping only noun, adj, vb, adv
+    # data_lemmatized = lemmatization(data_words_bigrams, allowed_postags=[
+    #                                 'NOUN', 'ADJ', 'VERB', 'ADV'], nlp=nlp)
     data_lemmatized = lemmatization(data_words_bigrams, allowed_postags=[
-                                    'NOUN', 'ADJ', 'VERB', 'ADV'], nlp=nlp)
+                                    'NOUN', 'VERB'], nlp=nlp)
 
     # Create Dictionary
     id2word = corpora.Dictionary(data_lemmatized)
@@ -120,41 +107,3 @@ def predict_topic_keywords(text, stopwords):
         "*")[1].replace("\"", "").strip() for keyword in lda_topic.split("+")]
 
     return lda_topic_keywords
-
-
-# def predict_topic(topic_keywords):
-#     # predict topic of text from topic keywords
-#     # topic_keywords = ["travel","new","blog","quit","post","decide","job","world"]
-#     # topics_pred should be one topic definition prediction based on topic_keywords
-#     return topics_pred
-
-
-app = Flask(__name__)
-
-
-@app.route("/predict", methods=["POST"])
-def predict():
-    text = request.json["text"]
-    source_language = detect_language(text)
-    target_language = "en"
-    translated_text = text
-    if source_language != target_language:
-        translated_text = translate(text, source_language, target_language)
-
-    topic_keywords = predict_topic_keywords(translated_text, stopwords)
-
-    # predicted_topics = predict_topic(topic_keywords)
-
-    prediction_object = {
-        "text_language": source_language,
-        "translated_language": target_language,
-        "translated_text": translated_text,
-        "topic_keywords": topic_keywords,
-        # "predicted_topics": predicted_topics
-    }
-
-    return jsonify({"prediction": prediction_object})
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
